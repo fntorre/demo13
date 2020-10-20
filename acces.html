@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" 
+      xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+
+<head>
+    <title><vtex.cmc:searchTitle /></title>
+    <vtex:metaTags/>
+
+    <link href="https://clicneaprod.vteximg.com.br/arquivos/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="https://clicneaprod.vteximg.com.br/arquivos/ion.rangeSlider.skinHTML5.css" rel="stylesheet" type="text/css" />
+    <script src="https://clicneaprod.vteximg.com.br/arquivos/ion.rangeSlider.min.js"></script>
+
+    <vtex:template id="cn-commonStyles" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://clicneaprod.vteximg.com.br/arquivos/categ-mobile.css"  media="(max-width:768px)" />
+    <link rel="stylesheet" href="https://clicneaprod.vteximg.com.br/arquivos/categ-desk.css"    media="(min-width:769px)" />
+
+</head>
+
+<body id="category-page">
+
+    <!-- Header -->
+    <vtex:template id="cn-header" />
+    <!-- Fin Header -->
+
+    <!-- Busca -->
+    <!-- // utilizo las mismas clases que para categoria // -->
+    <section id="categ-content" class="page container-fluid px-0">
+        <div class="row no-gutters" id="portada">
+            <div class="col-xs-12 px-0">
+                <div class="in-sk-banfull">
+                    <div class="skeleton-loading sk-ban-full"></div>
+                    <div class="placeholder" style="display:none;">
+                        <vtex:contentPlaceHolder id="portada" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters" id="categ-body">
+            <div class="col-xs-12 px-0">
+                <div class="container">
+                    <div class="row no-gutters" id="migas">
+                        <div class="col-xs-12 px-0">
+                            <div id="box-bread-brumb">
+                                <vtex.cmc:breadCrumb />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters" id="categ-info">
+                        <aside id="filtros" class="col-md-3 sidebar px-0 contentHide" contentShow="filtros">
+                            <div class="title-modal hidden-md hidden-lg text-center itemShow" itemClick="filtros">
+                                <i class="fas fa-sliders-h"></i>
+                                <strong>FILTRAR</strong>
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="loading-bar"></div>
+                            <div id="departament-navegador">
+                                <vtex.cmc:searchNavigator />
+                                <div id="category-extra-filtro"></div>
+                            </div>
+                        </aside>
+                        <div class="opc text-center hidden-md hidden-lg contentHide" contentShow="filtros">
+                            <div class="itemShow" itemClick="filtros"><span>APLICAR FILTROS</span></div>
+                            <div class="limpiar-filtros"><a href="/">X ELIMINAR FILTROS</a></div>
+                        </div>
+                        <article id="main-content" class="col-xs-12 col-md-9 px-0">
+                            <div id="orderBy" class="contentHide" contentshow="ordenar">
+                                <div class="title-modal hidden-md hidden-lg text-center itemShow" itemClick="ordenar">
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    <strong>ORDENAR POR</strong>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="loading-bar hidden-md hidden-lg"></div>
+                                <ul>
+                                    <li class="item-titulo hidden-xs hidden-sm"><i class="fas fa-sort-amount-down"></i>Ordenar por:</li>
+                                    <li class="item-order" data-order="O=OrderByPriceASC" url-order="">Menor Precio</li>
+                                    <li class="item-order" data-order="O=OrderByPriceDESC" url-order="">Mayor Precio</li>
+                                    <li class="item-order" data-order="O=OrderByBestDiscountDESC" url-order="">Mejor Descuento</li>
+                                    <li class="item-order" data-order="O=OrderByReleaseDateDESC" url-order="">Lanzamientos</li>
+                                </ul>
+                            </div>
+                            <div id="collections">
+                                <div class="showcase-default">
+                                    <vtex.cmc:searchResult layout="a2aa96fe-ef57-4f60-825d-a522f6cb5db6" itemCount="24"  columnCount="3" />
+                                </div>
+                            </div>
+                            <div id="bar-select-filtros-orden" class="hidden-md hidden-lg text-center">
+                                <div id="select-filtros" class="itemShow" itemClick="filtros">
+                                    <i class="fas fa-sliders-h"></i>Filtrar
+                                </div>
+                                <div id="select-orden" class="itemShow" itemClick="ordenar">
+                                    <i class="fas fa-sort-amount-down"></i>Ordenar por
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Busca --> 
+
+    <!-- Footer -->
+    <vtex:template id="cn-footer" />
+    <!-- Fin Footer -->
+
+</body>
+    <vtex:template id="cn-commonScripts" />
+    <script src="https://clicneaprod.vteximg.com.br/arquivos/advanced-filter.js"></script>
+    <script src="https://clicneaprod.vteximg.com.br/arquivos/cn-categ.js"></script>
+</html>
